@@ -7,6 +7,11 @@
 body {
     background: #263238;
 }
+
+button {
+    cursor: pointer;
+}
+
 ul {
     list-style: none;
 }
@@ -35,13 +40,33 @@ a {
     z-index: 1;
 }
 .header__menu {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background: white;
+    width: 300px;
+    left: -300px;
+    padding: 15px;
     display: flex;
+    justify-content: space-between;
+    transition: 0.5s;
 }
+
+.header__menu.active {
+    left: 0;
+}
+
+.header__nav-btn {
+    height: 30px;
+}
+
 .header__menu-link, .header__logo {
-    color: #EEEEEE;
     text-transform: uppercase;
     font-size: 18px;
     margin-right: 15px;
+    margin-bottom: 15px;
+    display: block;
+    color: black;
 }
 .header__logo {
     margin-right: 0;

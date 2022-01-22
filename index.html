@@ -13,6 +13,7 @@
     При наведение (событие mouseover) на блок .header__content начинает рандомно двигаться при помощи marginTop и marginLeft
     И блок не должен выходить за пределы видимой облости экрана
  -->
+
 <body>
     <header class="header">
         <div class="header__content">
@@ -20,11 +21,15 @@
             <p>header description</p>
         </div>
         <nav class="header__nav">
-            <ul class="header__menu">
-                <li class="header__menu-item"><a href="#" class="header__menu-link">link 1</a></li>
-                <li class="header__menu-item"><a href="#" class="header__menu-link">link 2</a></li>
-                <li class="header__menu-item"><a href="#" class="header__menu-link">link 3</a></li>
-            </ul>
+            <button class="header__nav-btn">Open</button>
+            <div class="header__menu">
+                <ul>
+                    <li class="header__menu-item"><a href="#" class="header__menu-link">link 1</a></li>
+                    <li class="header__menu-item"><a href="#" class="header__menu-link">link 2</a></li>
+                    <li class="header__menu-item"><a href="#" class="header__menu-link">link 3</a></li>
+                </ul>
+                <button class="header__nav-btn">Close</button>
+            </div>
             <a href="#" class="header__logo">logo</a>
         </nav>
     </header>
@@ -34,7 +39,8 @@
             <div class="info__scroll">
                 <h2 class="info__scroll-title">Скроллинг</h2>
                 <p class="info__scroll-desc">
-                     Форма представления информации, при которой содержимое двигается в вертикальном или горизонтальном направлении. Таким образом, скроллинг не изменяет содержимое, но передвигает «камеру»
+                    Форма представления информации, при которой содержимое двигается в вертикальном или горизонтальном
+                    направлении. Таким образом, скроллинг не изменяет содержимое, но передвигает «камеру»
                 </p>
             </div>
         </section>

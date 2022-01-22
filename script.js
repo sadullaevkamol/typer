@@ -46,9 +46,7 @@ const myScroll = new Scroll(
 class Hover {
     constructor(item) {
         this.element = document.querySelector(item)
-    }
 
-    final() {
         this.element.addEventListener('mouseover', () => {
             this.mover()
         })
@@ -61,26 +59,40 @@ class Hover {
             transition: 0.5s;
         `
     }
-    
+
     random(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
-    } 
+    }
 }
 
 let myHover = new Hover('.header__content')
 
-myHover.final();
+const hBtns = document.querySelectorAll('.header__nav-btn');
+const hMenu = document.querySelector('.header__menu')
 
-// const hover = document.querySelector('.header__content');
 
-// function random(min, max) {  
-//     return Math.floor(Math.random() * (max - min) + min)
+hBtns.forEach(hBtn => {
+    hBtn.addEventListener('click', () => {
+        hMenu.classList.toggle('active')
+    })
+})
+
+
+// class Burger{
+//     constructor(obj) {
+//         this.button = document.querySelectorAll(obj.buyton)
+//         this.menu = document.querySelector(obj.menu)
+
+
+//         this.button.forEach(item => {
+//             item.addEventListener('click', () => {
+//                 this.menu.classList.toggle('active')
+//             })
+//         })
+//     }
 // }
 
-// hover.addEventListener('mouseover', () => {
-//     hover.style = `
-//         margin-top: ${random(1, 500)}px;
-//         margin-left: ${random(1,500)}px;
-//         transition: 0.5s;
-//     `
+// const myBurger = new Burger({
+//     button: '.header__nav-btn',
+//     menu: '.header__menu'
 // })
