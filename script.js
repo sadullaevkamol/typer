@@ -67,32 +67,87 @@ class Hover {
 
 let myHover = new Hover('.header__content')
 
-const hBtns = document.querySelectorAll('.header__nav-btn');
-const hMenu = document.querySelector('.header__menu')
+// const hBtns = document.querySelectorAll('.header__nav-btn');
+// const hMenu = document.querySelector('.header__menu')
 
 
-hBtns.forEach(hBtn => {
-    hBtn.addEventListener('click', () => {
-        hMenu.classList.toggle('active')
-    })
+// hBtns.forEach(hBtn => {
+//     hBtn.addEventListener('click', () => {
+//         hMenu.classList.toggle('active')
+//     })
+// })
+
+// setTimeout(() => {
+    
+// }, timeout);
+
+class Burger {
+    constructor(obj) {
+        this.button = document.querySelectorAll(obj.button)
+        this.menu = document.querySelector(obj.menu)
+
+
+        this.button.forEach(item => {
+            item.addEventListener('click', () => {
+                this.menu.classList.toggle('active')
+            })
+        })
+    }
+}
+
+const myBurger = new Burger({
+    button: '.header__nav-btn',
+    menu: '.header__menu'
 })
 
+const title = document.querySelector('h1')
 
-// class Burger{
-//     constructor(obj) {
-//         this.button = document.querySelectorAll(obj.buyton)
-//         this.menu = document.querySelector(obj.menu)
+const text = [
+    title.innerHTML
+];
 
+let line = 0;
+let count = 0;
+let result = '';
+function typeLine() {
+    setTimeout(
+        () => {
+            result += text[line][count]
+            title.innerHTML = result + '|';
+            count++;
+            if (count >= text[line].length) {
+                count = 0;
+                line++;
+            }
+            typeLine();
+        }, 200)
+}
+typeLine();
 
-//         this.button.forEach(item => {
-//             item.addEventListener('click', () => {
-//                 this.menu.classList.toggle('active')
-//             })
-//         })
+// class Type {
+//     constructor(element) {
+//         this.title = document.querySelector(element);
+//         this.text = [this.title.innerHTML];
+//         this.line = 0;
+//         this.count = 0;
+//         this.result = '';
+//     }
+
+//     timeout() {
+//         setTimeout(() => {
+//             this.typeLine
+//         }, 200);
+//     }
+
+//     typeLine() {
+//         this.result += this.text[this.line][this.count]
+//         this.title.innerHTML = this.result + '|'
+//         this.count++
+//         if( this.count >= this.text[this.line].length) {
+//             this.count = 0;
+//             this.line++
+//         }
 //     }
 // }
 
-// const myBurger = new Burger({
-//     button: '.header__nav-btn',
-//     menu: '.header__menu'
-// })
+// const myType = new Type('h1')
